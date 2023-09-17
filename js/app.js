@@ -100,7 +100,7 @@ const cardsWon = [];
 function createBoard() {
   for (let i = 0; i < cardArray.length; i++) {
     const card = document.createElement('img');
-    card.setAttribute('src', '../img/blank.png');
+    card.setAttribute('src', './img/blank.png');
     card.setAttribute('data-id', i);
     card.addEventListener('click', flipCard);
     gridDisplay.appendChild(card);
@@ -116,19 +116,19 @@ function checkMatch() {
   const optionTwoId = cardsChosenIds[1];
 
   if (optionOneId === optionTwoId) {
-    cards[optionOneId.setAttribute('src', '../img/blank.png')];
-    cards[optionTwoId.setAttribute('src', '../img/blank.png')];
+    cards[optionOneId.setAttribute('src', './img/blank.png')];
+    cards[optionTwoId.setAttribute('src', './img/blank.png')];
   }
 
   if (cardsChosen[0] == cardsChosen[1]) {
-    cards[optionOneId].setAttribute('src', '../img/empty.png');
-    cards[optionTwoId].setAttribute('src', '../img/empty.png');
+    cards[optionOneId].setAttribute('src', './img/empty.png');
+    cards[optionTwoId].setAttribute('src', './img/empty.png');
     cards[optionOneId].removeEventListener('click', flipCard);
     cards[optionTwoId].removeEventListener('click', flipCard);
     cardsWon.push(cardsChosen);
   } else {
-    cards[optionOneId].setAttribute('src', '../img/blank.png');
-    cards[optionTwoId].setAttribute('src', '../img/blank.png');
+    cards[optionOneId].setAttribute('src', './img/blank.png');
+    cards[optionTwoId].setAttribute('src', './img/blank.png');
   }
 
   resultDisplay.textContent = cardsWon.length;
